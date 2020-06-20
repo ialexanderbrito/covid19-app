@@ -28,7 +28,7 @@ export const Logo = styled.Image`
 `;
 
 export const Header = styled.View`
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 20px 20px;
   background-color: #fbbd09;
   border-radius: 8px;
@@ -45,6 +45,15 @@ export const Description = styled.Text`
   margin-top: 10px;
   font-size: 14px;
   font-family: ${'Roboto_400Regular'};
+  line-height: 20px;
+  color: #666;
+`;
+
+export const DateText = styled.Text`
+  margin-top: 5px;
+  font-size: 10px;
+  font-family: ${'Roboto_400Regular'};
+  font-weight: bold;
   line-height: 20px;
   color: #666;
 `;

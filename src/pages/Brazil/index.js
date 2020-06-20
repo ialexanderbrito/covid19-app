@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
+import moment from 'moment';
+import localization from 'moment/locale/pt-br';
 
 import {
   Wrapper,
@@ -12,6 +14,7 @@ import {
   Header,
   Description,
   SubTitle,
+  DateText,
 } from './styles';
 
 import logo from '../../assets/logo.png';
@@ -58,6 +61,12 @@ export default Brazil = () => {
           <SubTitle>Recuperados</SubTitle>
           <SubTitle>{numberFormatter(brazil.data.recovered)}</SubTitle>
         </Header>
+        <DateText>
+          Última atualização:{' '}
+          {moment(brazil.data.updated_at)
+            .locale('pt-br', localization)
+            .format('LLL')}
+        </DateText>
       </Container>
     </Wrapper>
   );

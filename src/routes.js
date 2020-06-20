@@ -8,8 +8,8 @@ import {
 const AppStack = createStackNavigator();
 
 import Home from './pages/Home';
-import Global from './pages/Global';
 import Brazil from './pages/Brazil';
+import States from './pages/States';
 
 export default function Routes() {
   return (
@@ -23,8 +23,8 @@ export default function Routes() {
         }}
       >
         <AppStack.Screen name="Home" component={Home} />
-        <AppStack.Screen name="Global" component={Global} />
         <AppStack.Screen name="Brazil" component={Brazil} />
+        <AppStack.Screen name="States" component={States} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

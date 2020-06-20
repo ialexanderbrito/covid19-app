@@ -46,6 +46,10 @@ export default Brazil = () => {
           <SubTitle>Confirmados</SubTitle>
           <SubTitle>{numberFormatter(brazil.data.confirmed)}</SubTitle>
         </Header>
+        <Header style={{ backgroundColor: '#4CB4FB' }}>
+          <SubTitle>Ativos</SubTitle>
+          <SubTitle>{numberFormatter(brazil.data.cases)}</SubTitle>
+        </Header>
         <Header style={{ backgroundColor: '#F25559' }}>
           <SubTitle>Óbitos</SubTitle>
           <SubTitle>{numberFormatter(brazil.data.deaths)}</SubTitle>

@@ -29,7 +29,7 @@ export const Logo = styled.Image`
 
 export const Header = styled.View`
   margin-top: 20px;
-  padding: 30px 20px;
+  padding: 20px 20px;
   background-color: #fbbd09;
   border-radius: 8px;
 `;

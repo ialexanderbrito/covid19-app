@@ -15,6 +15,7 @@ import {
   List,
   ListItem,
   ListTitle,
+  Flag,
 } from './styles';
 
 import logo from '../../assets/logo.png';
@@ -78,6 +79,12 @@ export default States = () => {
                 navigateToDetails(state);
               }}
             >
+              <Flag
+                resizeMode="contain"
+                source={{
+                  uri: `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${state.uf}.png`,
+                }}
+              />
               <ListTitle>{state.state}</ListTitle>
               <Ionicons
                 name="ios-arrow-round-forward"

@@ -77,3 +77,8 @@ export const ListTitle = styled.Text`
   font-family: ${'Roboto_500Medium'};
   color: #1b1b1b;
 `;
+
+export const Flag = styled.Image`
+  width: 35px;
+  height: 21px;
+`;

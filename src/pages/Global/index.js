@@ -1,7 +1,11 @@
 import React from 'react';
 
-import styles from './styles';
+import { Wrapper, Title } from './styles';
 
 export default function Global() {
-  return null;
+  return (
+    <Wrapper>
+      <Title>Covid 19</Title>
+    </Wrapper>
+  );
 }

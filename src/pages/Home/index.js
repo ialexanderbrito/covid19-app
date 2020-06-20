@@ -25,11 +25,12 @@ export default Home = () => {
   const navigation = useNavigation();
 
   const [cases, setCases] = useState();
+  const [casesState, setCasesState] = useState();
 
   useEffect(() => {
     const loadCases = async () => {
       try {
-        const data = await api.get('/brazil');
+        const data = await api.get('/api/report/v1/brazil');
 
         setCases(data);
       } catch (error) {
@@ -39,8 +40,25 @@ export default Home = () => {
     loadCases();
   }, []);
 
+  useEffect(() => {
+    const loadCasesState = async () => {
+      try {
+        const data = await api.get('/api/report/v1');
+
+        setCasesState(data);
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+    loadCasesState();
+  }, []);
+
   const NavigateToBrazil = () => {
     navigation.navigate('Brazil', { brazil: cases.data });
+  };
+
+  const NavigateToState = () => {
+    navigation.navigate('States', { states: casesState.data });
   };
   return (
     <Wrapper>
@@ -69,7 +87,7 @@ export default Home = () => {
               <SituationText>Brasil</SituationText>
             </SituationButton>
 
-            <SituationButton>
+            <SituationButton onPress={NavigateToState}>
               <FontAwesome5 name="flag" size={20} color="#fff" />
               <SituationText>Estados</SituationText>
             </SituationButton>

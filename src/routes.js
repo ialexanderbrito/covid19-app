@@ -10,6 +10,7 @@ const AppStack = createStackNavigator();
 import Home from './pages/Home';
 import Brazil from './pages/Brazil';
 import States from './pages/States';
+import DetailStates from './pages/DetailStates';
 
 export default function Routes() {
   return (
@@ -25,6 +26,7 @@ export default function Routes() {
         <AppStack.Screen name="Home" component={Home} />
         <AppStack.Screen name="Brazil" component={Brazil} />
         <AppStack.Screen name="States" component={States} />
+        <AppStack.Screen name="DetailStates" component={DetailStates} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

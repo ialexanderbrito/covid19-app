@@ -74,3 +74,12 @@ export const Footer = styled.Text`
   line-height: 20px;
   color: #666;
 `;
+
+export const DateText = styled.Text`
+  margin-top: 5px;
+  font-size: 10px;
+  font-family: ${'Roboto_400Regular'};
+  font-weight: bold;
+  line-height: 20px;
+  color: #666;
+`;

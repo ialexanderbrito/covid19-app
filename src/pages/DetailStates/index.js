@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
+import moment from 'moment';
+import localization from 'moment/locale/pt-br';
 
 import {
   Wrapper,
@@ -15,6 +17,7 @@ import {
   Card,
   CardTitle,
   CardNumber,
+  DateText,
   Footer,
 } from './styles';
 
@@ -67,6 +70,10 @@ export default States = () => {
           <CardTitle>Óbitos</CardTitle>
           <CardNumber>{numberFormatter(detail.deaths)}</CardNumber>
         </Card>
+        <DateText>
+          Última atualização:{' '}
+          {moment(detail.datetime).locale('pt-br', localization).format('LLL')}
+        </DateText>
         <Footer>
           * Os estados não disponibilizam os dados de pacientes recuperados.
         </Footer>

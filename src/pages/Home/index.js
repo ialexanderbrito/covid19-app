@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import {
@@ -15,9 +16,32 @@ import {
   SituationText,
 } from './styles';
 
+import api from '../../services/api';
+
+import Prevents from '../../components/Prevents';
 import logo from '../../assets/logo.png';
 
-export default function Home() {
+export default Home = () => {
+  const navigation = useNavigation();
+
+  const [cases, setCases] = useState();
+
+  useEffect(() => {
+    const loadCases = async () => {
+      try {
+        const data = await api.get('/brazil');
+
+        setCases(data);
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+    loadCases();
+  }, []);
+
+  const NavigateToBrazil = () => {
+    navigation.navigate('Brazil', { brazil: cases.data });
+  };
   return (
     <Wrapper>
       <Container>
@@ -37,7 +61,10 @@ export default function Home() {
             respirar.
           </Description>
           <Situation>
-            <SituationButton style={{ backgroundColor: '#FBBD09' }}>
+            <SituationButton
+              onPress={NavigateToBrazil}
+              style={{ backgroundColor: '#FBBD09' }}
+            >
               <FontAwesome5 name="globe-americas" size={20} color="#fff" />
               <SituationText>Brasil</SituationText>
             </SituationButton>
@@ -48,7 +75,8 @@ export default function Home() {
             </SituationButton>
           </Situation>
         </Header>
+        <Prevents />
       </Container>
     </Wrapper>
   );
-}
+};

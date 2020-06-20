@@ -24,6 +24,8 @@
     "android": {
       "package": "com.ialexanderbrito.covid19",
       "versionCode": 1
-    }
+    },
+    "description": "\nAplicativo para consultar a situação no Brasil do COVID-19",
+    "githubUrl": "https://github.com/ialexanderbrito/covid19-app"
   }
 }

@@ -42,7 +42,7 @@ Extras:
 
 ### 📱 App
 
-[Download para Android](/)
+[Download para Android](https://github.com/ialexanderbrito/covid19-app/releases/tag/1.0.0)
 
 ### 💻 Projeto
 
